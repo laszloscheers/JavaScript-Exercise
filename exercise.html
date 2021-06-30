@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <script src="js/site.js"></script>
+    <style>
+        .messagePanel{
+            border: solid 1px red;
+            width: 85%;
+            height: 150px;
+            margin-top: 15px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercise </h1>
+    <button onclick="ClickMe()">Click Me</button>
+    <input type="text" id="field1" value= "2" onfocus="ClearField()" onblur="SetField()"/>
+    <input type="text" id="field2" value= "3" onfocus="ClearField()" onblur="SetField()"/>
+
+    <div class="messagePanel" id="messagePanel"></div>
+
+</body>
+</html>
