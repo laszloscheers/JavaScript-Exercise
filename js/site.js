@@ -1,89 +1,23 @@
-function init(){
-    //alert('Hello Worl')
-    ShowDate();
-    Greeting();
-}
 
-function Greeting(){
-    let htmlElement = document.getElementById("greeting");
-    htmlElement.innerHTML = 'Hello World';
-
-}
-
-function ShowDate(){
-    console.log(`ShowDate() has been called`);
-    let currentDate = new Date();
-    const longDate = currentDate.toString();
-    const shortDate = currentDate.toDateString();
-    const utcDate = currentDate.toUTCString();
-
-    console.log(`Long date is ${longDate}`);
-    console.log(`Short date is ${shortDate}`);
-    console.log(`UTC date is ${utcDate}`);
-
-    let htmlElement = document.getElementById("currentDate");
-    htmlElement.innerHTML = shortDate;
-
-}
 
 function ClickMe(){
     console.log(`Button has been clicked`);
-    const planets = ['Mercury', 'Venus', 'Earth'];
-    //WriteListOfPlanets(planets)
-    //WriteAsHTML(planets)
-    //WriteAsHTML_1(planets)
-    WriteAsHTML_1(planets)
-
-}
-
-function ClearEmail(){
-    let field =document.getElementById("email");
-
-    console.log(`Current Value is ${field.value}`)
-    field.value ="";
-}
-function SetEmail(){
-    let field =document.getElementById("email");
-    console.log(`Current Value is ${field.value}`);
-    field.value ="Put your email here";
-}
-
-function WriteListOfPlanets(listOfItems){
+    var field1 = document.getElementById("field1").value;
+    var field2 = document.getElementById("field2").value;
+    var solution = parseInt(field1) + parseInt(field2);
     let messagePanel = document.getElementById("messagePanel");
-    messagePanel.innerHTML = listOfItems.join();
+    messagePanel.innerHTML = `The sum of ${field1} and ${field2} is ${solution}.`;
 }
 
-function WriteAsHTML(listOfItems){
-    let messagePanel = document.getElementById("messagePanel");
-    let holdingText ='<ol>';
-    for (const item of listOfItems){
-        holdingText += `<li>${item}</li>`
-        console.log(holdingText)
-    }
-    holdingText += '</ol>'
-    messagePanel.innerHTML = holdingText;
+
+function ClearField1(){
+    let field1 = document.getElementById("field1");
+
+    field1.value ="";
 }
 
-function WriteAsHTML_1(listOfItems){
-    let messagePanel = document.getElementById("messagePanel");
-    let holdingText =['<ul>'];
-    for (const item of listOfItems){
-        holdingText.push(`<li>${item}</li>`);
-        console.log(holdingText.join());
-    }
-    holdingText.push('</ul>');
-    messagePanel.innerHTML = holdingText.join(' ');
-}
+function ClearField2(){
+    let field2 = document.getElementById("field2");
 
-function WriteAsHTML_2(listOfItems){
-    let messagePanel = document.getElementById("messagePanel");
-    let htmlText =['<ol>'];
-    let list = listOfItems.map(currentItem =>{
-
-        return `<li>${currentItem}</li>`
-    })
-
-    htmlText = htmlText.concat(list);
-    htmlText.push(`</ul>`)
-    messagePanel.innerHTML = htmlText.join(' ');
+    field2.value ="";
 }
